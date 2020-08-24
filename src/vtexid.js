@@ -1,4 +1,4 @@
-const http = require("got");
+const http = require("axios");
 
 const host = "https://vtexid.vtex.com.br";
 // const host = "http://localhost:5000";
