@@ -8,7 +8,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 const CONSTANTS = {
-  account: "loginstore",
+  account: "samsungbr",
   SERVER_PORT: 8081,
   LOOP_BACK: "http://127.0.0.1:8081/callback",
   VTEXID_CALLBACK: "/api/vtexid/toolbelt/callback",
