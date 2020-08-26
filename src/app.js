@@ -79,8 +79,14 @@ const main = async () => {
     secretHash,
     CONSTANTS.LOOP_BACK
   );
+
+  console.log("1. Started login")
+  await vtexid.hasAdminLogin(CONSTANTS.account)
+  console.log("2. Checked if has vtex.admin-login")
+  
   STATE.loginState = loginState;
   STATE.secret = secret;
+
 
   const loginPath =
     CONSTANTS.account + ".myvtex.com/_v/segment/admin-login/v1/login";
