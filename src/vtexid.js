@@ -1,4 +1,4 @@
-const http = require("axios");
+const http = require("./axios");
 const querystring = require("querystring");
 
 const host = "https://vtexid.vtex.com.br";
