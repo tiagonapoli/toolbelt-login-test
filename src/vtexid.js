@@ -41,7 +41,7 @@ exports.hasAdminLogin = async (account) => {
   try {
     const url = `https://${account}.myvtex.com/_v/segment/admin-login/v1/login`
     console.log("GET to ", url)
-    const { data } = await http.get(`https://${account}.myvtex.com/_v/segment/admin-login/v1/login`, { proxy: { "protocol": "http"} })
+    const { data } = await http.get(`https://${account}.myvtex.com/_v/segment/admin-login/v1/login`)
     return data.includes('vtex.admin-login')
   } catch (err) {
     console.log(err)
