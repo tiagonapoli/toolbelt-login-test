@@ -50,6 +50,8 @@ app.post("/callback", async (req, res) => {
   );
   console.log(result);
   res.send(finalPage);
+
+  console.log("Finished! You can close this application now")
 });
 
 app.listen(8081, function () {
