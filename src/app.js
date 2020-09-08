@@ -3,16 +3,10 @@ const open = require("open");
 const crypto = require("crypto");
 const bodyParser = require("body-parser");
 const vtexid = require("./vtexid");
+const { CONSTANTS } = require('./constants')
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
-
-const CONSTANTS = {
-  account: "samsungbr",
-  SERVER_PORT: 8081,
-  LOOP_BACK: "http://127.0.0.1:8081/callback",
-  VTEXID_CALLBACK: "/api/vtexid/toolbelt/callback",
-};
 
 const STATE = {
   loginState: null,
@@ -51,7 +45,7 @@ app.post("/callback", async (req, res) => {
   console.log(result);
   res.send(finalPage);
 
-  console.log("Finished! You can close this application now")
+  console.log("Finished successfully! You can close this application now")
 });
 
 app.listen(8081, function () {
@@ -85,7 +79,7 @@ const main = async () => {
   console.log("1. Started login")
   await vtexid.hasAdminLogin(CONSTANTS.account)
   console.log("2. Checked if has vtex.admin-login")
-  
+
   STATE.loginState = loginState;
   STATE.secret = secret;
 
